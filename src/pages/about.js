@@ -1,8 +1,9 @@
 import React from "react"
+import Layout from "../components/Layout"
 
 export default function About() {
   return (
-    <div>
+    <Layout>
       <h1>About Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -22,6 +23,6 @@ export default function About() {
         vitae iure autem deserunt. Repellat earum, nobis porro sit sed hic
         possimus dolorum.
       </p>
-    </div>
+    </Layout>
   )
 }
