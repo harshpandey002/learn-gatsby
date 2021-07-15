@@ -4,8 +4,9 @@ import Layout from "../../components/Layout"
 import * as styles from "../../styles/projects.module.css"
 
 export default function Projects({ data }) {
-  const projects = data.allMarkdownRemark.nodes
-  console.log(projects)
+  const projects = data.projects.nodes
+  const contact = data.contact.siteMetadata.contact
+  console.log(data)
 
   return (
     <Layout>
@@ -22,6 +23,7 @@ export default function Projects({ data }) {
             </Link>
           ))}
         </div>
+        <p>Like what you see? Email me at {contact} for a quote</p>
       </div>
     </Layout>
   )
@@ -30,7 +32,9 @@ export default function Projects({ data }) {
 //Export Page query
 export const query = graphql`
   query ProjectsPage {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    projects: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       nodes {
         frontmatter {
           slug
@@ -38,6 +42,11 @@ export const query = graphql`
           title
         }
         id
+      }
+    }
+    contact: site {
+      siteMetadata {
+        contact
       }
     }
   }

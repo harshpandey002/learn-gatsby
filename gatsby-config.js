@@ -20,5 +20,6 @@ module.exports = {
     title: "Jack Frostier",
     description: "Portfolio",
     copyright: "This website is copyright 2021 Jack Frostier",
+    contact: "me@jackfrostier.com",
   },
 }
